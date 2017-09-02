@@ -1,0 +1,53 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body, body * {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #663300;
+}
+
+.bookshelf {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: 4s;
+}
+
+.book-spine {
+    display: inline-block;
+    border: 1px solid #eee;
+    vertical-align: bottom;
+    position: relative;
+}
+
+.book-spine>div{
+    display: inline-block;
+   
+}
+
+.book-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -moz-transform: translateX(-50%) translateY(-50%) rotate(-270deg);
+    -webkit-transform: translateX(-50%) translateY(-50%) rotate(-270deg);
+    transform:  translateX(-50%) translateY(-50%) rotate(-270deg);
+    width: 200px;
+    text-align: center;
+}
+
+.book-author {
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    font-size: 0.7em;
+}
