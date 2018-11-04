@@ -2,13 +2,13 @@ const puppeteer = require('puppeteer');
 const fs = require('fs');
 const fsPath = require('fs-path');
 
-const output = `../ClientApp/book_images.json`;
+const output = `../client-app/book_images.json`;
 
 (async () => {
 
     let imageUrls = [];
 
-    fs.readFile(`../ClientApp/books.json`, async (err, data) => {
+    fs.readFile(`../client-app/books.json`, async (err, data) => {
         if (err) throw err;
         let books = JSON.parse(data);
 

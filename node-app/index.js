@@ -2,11 +2,11 @@ const fetch = require('node-fetch');
 const parseXML = require('xml2js').parseString;
 const fs = require('fs-path');
 
-const output = `../ClientApp/books.json`;
+const output = `../client-app/books.json`;
 
-const api_key = 'p7kdrPq136G6GldRFvcgw';
+const api_key = '';
 const get_shelf_url = 'https://www.goodreads.com/review/list';
-const user_id = '30736581';
+const user_id = '';
 const shelf_name = 'audiobooks';
 
 let page = 1;
@@ -40,7 +40,7 @@ const getPage = () => {
                 let done = end >= total;
 
                 if (done) {
-                    write();
+                    fs.writeFile(output, JSON.stringify(books), () => { });
                 } else {
                     page++;
                     getPage();
@@ -49,10 +49,6 @@ const getPage = () => {
             });
         });
 
-}
-
-const write = () => {
-    fs.writeFile(output, JSON.stringify(books), () => { });
 }
 
 run();
