@@ -1,9 +1,12 @@
 # Digital-Bookshelf
 
+[DEMO HERE](https://lhanneman.github.io/digital-bookshelf/index.html)
+
 This is a web page that will display a digital bookshelf based on GoodReads.com data. Images of book spines are not available on GoodReads (or anywhere that I could find) so I'm displaying them as "album artwork", using Swiper JS. Like a digital picture frame, the books will transition over time to show them all. 
 
 Ideally, the book covers would be the same size, as it will look better with the album artwork scroller. To make this as consistent as possible I created a new bookshelf in GoodReads called `audiobooks`, and then added each of my Audible Audiobooks to that shelf.
 The reason for this is because most Audible covers are perfectly square. NOTE: I had to manually go to each book on this shelf and change the "edition" to the Audiobook (or any square-covered edition).
+
 
 
 ## node-app
