@@ -1,6 +1,6 @@
 const fetch = require('node-fetch');
 const parseXML = require('xml2js').parseString;
-const fs = require('fs-path');
+const fs = require('fs-extra');
 
 const output = `../client-app/books.json`;
 
@@ -40,7 +40,10 @@ const getPage = () => {
                 let done = end >= total;
 
                 if (done) {
-                    fs.writeFile(output, JSON.stringify(books), () => { });
+                    fs.writeJson(output, books, err => {
+                        if (err) return console.error(err)
+                        console.log('success!')
+                    });
                 } else {
                     page++;
                     getPage();
