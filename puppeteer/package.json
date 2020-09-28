@@ -10,6 +10,6 @@
   "license": "ISC",
   "dependencies": {
     "fs-path": "0.0.24",
-    "puppeteer": "^1.10.0"
+    "puppeteer": "^5.3.1"
   }
 }
