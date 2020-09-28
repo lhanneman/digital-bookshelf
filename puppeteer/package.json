@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "fs-path": "0.0.24",
+    "fs-extra": "^9.0.1",
     "puppeteer": "^5.3.1"
   }
 }

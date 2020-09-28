@@ -1,7 +1,5 @@
 const puppeteer = require('puppeteer');
-const fs = require('fs');
-const fsPath = require('fs-path');
-
+const fs = require('fs-extra');
 const output = `../client-app/book_images.json`;
 
 (async () => {
@@ -16,8 +14,6 @@ const output = `../client-app/book_images.json`;
         const page = await browser.newPage();
 
         for (var i = 0; i < books.length; i++) {
-
-            
 
             let b = books[i];
 
@@ -37,14 +33,10 @@ const output = `../client-app/book_images.json`;
             });
 
             imageUrls.push(imageUrl);
-
         }
-
-
-        fsPath.writeFile(output, JSON.stringify(imageUrls), () => { });
-
+      
+        await fs.writeJson(output, imageUrls);
         console.log('done!');
-
         await browser.close();
 
     });
